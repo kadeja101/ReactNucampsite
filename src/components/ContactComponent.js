@@ -3,6 +3,12 @@ import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from "reactstrap"
 import { Link } from "react-router-dom";
 import { Control, Form, Errors, actions } from "react-redux-form";
 
+/* 
+
+
+
+ To test that your feedback data has posted successfully, you can check it by going to http://localhost:3001/feedback on the json-server. (If localhost doesn't work, you may need to substitute 127.0.0.1) You should also be able to see the change in your db.json file directly. */
+
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -32,8 +38,8 @@ class Contact extends Component {
   }
 
   handleSubmit(values) {
-    console.log("current state is: " + JSON.stringify(values));
-    alert("current state is:" + JSON.stringify(values));
+    console.log("hit")
+    this.props.postFeedback(values);
     this.props.resetFeedbackForm();
   }
 

@@ -134,7 +134,7 @@ function RenderComments({ comments, postComment, campsiteId }) {
                   day: "2-digit",
                 }).format(new Date(Date.parse(comments.date)))}
               </div>
-            </Fade>
+            </Fade> 
           ))}
         </Stagger>
         <CommentForm campsiteId={campsiteId} postComment={postComment}></CommentForm>
